@@ -2,6 +2,7 @@
   "name": "vmix-scripting",
   "displayName": "vMix Scripting Language",
   "description": "%extension.description%",
+  "publisher": "sysprofile",
   "version": "0.6.51",
     "repository": {
     "type": "git",
