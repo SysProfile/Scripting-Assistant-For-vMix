@@ -21,7 +21,7 @@ We are actively working on a community editing tool that will allow contributors
 
 ### Contextual IntelliSense
 
-Full autocompletion for all 678 functions in the vMix API, organized by category. The extension suggests parameters based on type, filters Inputs by compatibility, and shows valid value ranges inline.
+Full autocompletion for all functions in the vMix API, organized by category. The extension suggests parameters based on type, filters Inputs by compatibility, and shows valid value ranges inline.
 
 ![IntelliSense Demo](./docs/images/intellisense-categories.png)
 <!-- Screenshot: typing "API." showing the category list (Title, General, Audio, etc.) -->
@@ -62,7 +62,7 @@ Write in the typed syntax and export to native VB.NET that vMix understands. Imp
 
 **Typed syntax (what you write):**
 
-```
+```vb
 'My Score Script
 Dim score As String = "3"
 API.Title.SetText(InputsList.Score_vMix, ObjectsList.txtHome, score)
