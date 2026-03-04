@@ -95,6 +95,7 @@ Link a `.vmix` project file and the extension automatically reads all Inputs and
 **Import:** Lists all scripts in the linked project. Select one and the transpiler converts native `API.Function()` calls back to the typed format with `InputsList` and `ObjectsList` references.
 
 ![Import Script](./docs/images/import-script.png)
+![Import Script](./docs/images/import-script2.png)
 <!-- Screenshot: QuickPick showing available scripts from the project with line counts -->
 
 ![Export Script](./docs/images/export-script.png)
