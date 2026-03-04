@@ -1,6 +1,6 @@
 {
-  "name": "vmix-scripting",
-  "displayName": "vMix Scripting Language",
+  "name": "scripting-assistant-for-vmix",
+  "displayName": "Scripting Assistant for vMix",
   "description": "%extension.description%",
   "publisher": "sysprofile",
   "version": "0.6.51",
