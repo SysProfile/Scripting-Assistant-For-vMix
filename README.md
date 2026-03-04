@@ -26,8 +26,9 @@ Full autocompletion for all 678 functions in the vMix API, organized by category
 ![IntelliSense Demo](./docs/images/intellisense-categories.png)
 <!-- Screenshot: typing "API." showing the category list (Title, General, Audio, etc.) -->
 
-![Function Overloads](./docs/images/intellisense-overloads.png)
 #### SetText with two overloads (required-only vs all params)
+![Function Overloads](./docs/images/intellisense-overloads.png)
+
 <!-- Screenshot: typing "API.Title." showing SetText with two overloads (required-only vs all params) -->
 
 ![Parameter Completion](./docs/images/intellisense-params.png)
