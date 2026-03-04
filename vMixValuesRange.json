@@ -1,0 +1,3822 @@
+[
+  {
+    "category": "Audio",
+    "function": "Audio",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioAuto",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioAutoOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioAutoOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioBus",
+    "range": "+M,A,B,C,D,E,F,G"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioBusOff",
+    "range": "+M,A,B,C,D,E,F,G"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioBusOn",
+    "range": "+M,A,B,C,D,E,F,G"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioChannelMatrixApplyPreset",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioMixerShowHide",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioPluginOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioPluginOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioPluginOnOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "AudioPluginShow",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudio",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudioOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudioOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudioPluginOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudioPluginOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudioPluginOnOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusAAudioPluginShow",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudio",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudioOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudioOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudioPluginOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudioPluginOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudioPluginOnOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusBAudioPluginShow",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudio",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudioOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudioOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudioPluginOff",
+    "range": "@string:Bus,number:PluginNumber - Plugin Number starting from 1"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudioPluginOn",
+    "range": "@string:Bus,number:PluginNumber - Plugin Number starting from 1"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudioPluginOnOff",
+    "range": "@string:Bus,number:PluginNumber - Plugin Number starting from 1"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXAudioPluginShow",
+    "range": "@string:Bus,number:PluginNumber - Plugin Number starting from 1"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXSendToMaster",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXSendToMasterOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXSendToMasterOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXSolo",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXSoloOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "BusXSoloOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudio",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudioOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudioOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudioPluginOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudioPluginOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudioPluginOnOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "MasterAudioPluginShow",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBalance",
+    "range": "-1:1"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusAVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusAVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusBVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusBVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusCVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusCVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusDVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusDVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusEVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusEVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusFVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusFVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusGVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetBusGVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetGain",
+    "range": "0:24"
+  },
+  {
+    "category": "Audio",
+    "function": "SetGainChannel1",
+    "range": "0:24"
+  },
+  {
+    "category": "Audio",
+    "function": "SetGainChannel2",
+    "range": "0:24"
+  },
+  {
+    "category": "Audio",
+    "function": "SetHeadphonesVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetMasterVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetMasterVolumeFade",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolume",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixer",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerA",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerB",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerC",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerD",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerE",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerF",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerG",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeBusMixerM",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannel1",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannel2",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer1",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer10",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer11",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer12",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer13",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer14",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer15",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer16",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer2",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer3",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer4",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer5",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer6",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer7",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer8",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeChannelMixer9",
+    "range": "0:100"
+  },
+  {
+    "category": "Audio",
+    "function": "SetVolumeFade",
+    "range": "@number:Volume between 0 to 100,number:Duration in milliseconds"
+  },
+  {
+    "category": "Audio",
+    "function": "Solo",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SoloAllOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SoloOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SoloOn",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SoloPFL",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SoloPFLOff",
+    "range": "+"
+  },
+  {
+    "category": "Audio",
+    "function": "SoloPFLOn",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserBack",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserForward",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserKeyboardDisabled",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserKeyboardEnabled",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserMouseDisabled",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserMouseEnabled",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserNavigate",
+    "range": "+"
+  },
+  {
+    "category": "Browser",
+    "function": "BrowserReload",
+    "range": "+"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourceAutoNextOff",
+    "range": "@string:Data source name Name,string:Table name"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourceAutoNextOn",
+    "range": "@string:Data source name,string:Table name"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourceAutoNextOnOff",
+    "range": "@string:Data source name,string:Table name"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourceNextRow",
+    "range": "@string:Data source name,string:Table name"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourcePause",
+    "range": "+"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourcePlay",
+    "range": "+"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourcePlayPause",
+    "range": "+"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourcePreviousRow",
+    "range": "@string:Data source name,string:Table name"
+  },
+  {
+    "category": "DataSources",
+    "function": "DataSourceSelectRow",
+    "range": "@string:Data source name,string:Table name,number:Row Index starting from 0"
+  },
+  {
+    "category": "General",
+    "function": "ActivatorRefresh",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "CallManagerShowHide",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "KeyPress",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "SendKeys",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "SetDynamicValue1",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "SetDynamicValue2",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "SetDynamicValue3",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "SetDynamicValue4",
+    "range": "+"
+  },
+  {
+    "category": "General",
+    "function": "Undo",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ActiveInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AddInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPauseOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPauseOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayFirst",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayFirstOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayFirstOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayNext",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayNextOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayNextOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoPlayOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoRestartOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "AutoRestartOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ColourCorrectionAuto",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ColourCorrectionReset",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "CreateVirtualInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "DeinterlaceOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "DeinterlaceOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect1Off",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect1On",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect2Off",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect2On",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect3",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect3Off",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect3On",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect4",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect4Off",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Effect4On",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "InputPreviewHide",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "InputPreviewShow",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "InputPreviewShowHide",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "LayerOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "LayerOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "LayerOnOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListAdd",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListExport",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListPlayOut",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListRemove",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListRemoveAll",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListShowHide",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ListShuffle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "LivePlayPause",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "LoopOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "LoopOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MarkIn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MarkOut",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MarkReset",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MarkResetIn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MarkResetOut",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MirrorOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MirrorOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MoveInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "MoveLayer",
+    "range": "@number:FromIndex (starting at 1),number:ToIndex (starting at 1)"
+  },
+  {
+    "category": "Input",
+    "function": "NextItem",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "NextPicture",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Pause",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Play",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "PlayPause",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "PreviewInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "PreviewInputNext",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "PreviewInputPrevious",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "PreviousItem",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "PreviousPicture",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "RemoveInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ResetInput",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "Restart",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SaveVideoDelay",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SelectCategory",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SelectIndex",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetAlpha",
+    "range": "0:255."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGainB",
+    "range": "0:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGainG",
+    "range": "0:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGainR",
+    "range": "0:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGainRGB",
+    "range": "0:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGainY",
+    "range": "0:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGammaB",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGammaG",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGammaR",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGammaRGB",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCGammaY",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCHue",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCLiftB",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCLiftG",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCLiftR",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCLiftRGB",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCLiftY",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCCSaturation",
+    "range": "-1:1."
+  },
+  {
+    "category": "Input",
+    "function": "SetCrop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetCropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetCropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetCropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetCropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetDynamicInput1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetDynamicInput2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetDynamicInput3",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetDynamicInput4",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetEffect1Strength",
+    "range": "0.0:1.0"
+  },
+  {
+    "category": "Input",
+    "function": "SetEffect2Strength",
+    "range": "0.0:1.0"
+  },
+  {
+    "category": "Input",
+    "function": "SetEffect3Strength",
+    "range": "0.0:1.0"
+  },
+  {
+    "category": "Input",
+    "function": "SetEffect4Strength",
+    "range": "0.0:1.0"
+  },
+  {
+    "category": "Input",
+    "function": "SetFrameDelay",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetInputName",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer",
+    "range": "@number:Layer number (1 to 10),string:Input to set as layer"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer10Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer1Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer2Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer3Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer4Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer5Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer6Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer7Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer8Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9Crop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9CropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9CropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9CropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9CropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9Height",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9PanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9PanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9Rectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9Width",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9X",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9Y",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayer9Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicCrop",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicCropX1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicCropX2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicCropY1",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicCropY2",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicHeight",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicPanX",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicPanY",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicRectangle",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicWidth",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetLayerDynamicZoom",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetPanX",
+    "range": "-2:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetPanY",
+    "range": "-2:2."
+  },
+  {
+    "category": "Input",
+    "function": "SetPictureEffect",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetPictureEffectDuration",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetPictureTransition",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetPosition",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SetRate",
+    "range": "0.1:4."
+  },
+  {
+    "category": "Input",
+    "function": "SetRateSlowMotion",
+    "range": "0.1:1.0"
+  },
+  {
+    "category": "Input",
+    "function": "SetZoom",
+    "range": "0:5.0"
+  },
+  {
+    "category": "Input",
+    "function": "SharpenOff",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SharpenOn",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "SwapLayerAnimated",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "VideoCallAudioSource",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "VideoCallConnect",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "VideoCallVideoSource",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "VideoDelayStartRecording",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "VideoDelayStartStopRecording",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "VideoDelayStopRecording",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "WaitForCompletion",
+    "range": "+"
+  },
+  {
+    "category": "Input",
+    "function": "ZoomJoinMeeting",
+    "range": "+"
+  },
+  {
+    "category": "NDI",
+    "function": "NDICommand",
+    "range": "+"
+  },
+  {
+    "category": "NDI",
+    "function": "NDISelectSourceByIndex",
+    "range": "+"
+  },
+  {
+    "category": "NDI",
+    "function": "NDISelectSourceByName",
+    "range": "+"
+  },
+  {
+    "category": "NDI",
+    "function": "NDIStartRecording",
+    "range": "+"
+  },
+  {
+    "category": "NDI",
+    "function": "NDIStopRecording",
+    "range": "+"
+  },
+  {
+    "category": "OMT",
+    "function": "OMTSelectSourceByIndex",
+    "range": "+"
+  },
+  {
+    "category": "OMT",
+    "function": "OMTSelectSourceByName",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "Fullscreen",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "FullscreenOff",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "FullscreenOn",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SetOutput2",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SetOutput3",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SetOutput4",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SetOutputExternal2",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SetOutputFullscreen",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SetOutputFullscreen2",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "Snapshot",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "SnapshotInput",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartExternal",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartMultiCorder",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartRecording",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartSRTOutput",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartStopExternal",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartStopMultiCorder",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartStopRecording",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartStopSRTOutput",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartStopStreaming",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StartStreaming",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StopExternal",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StopMultiCorder",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StopRecording",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StopSRTOutput",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StopStreaming",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StreamingSetKey",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StreamingSetPassword",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StreamingSetURL",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "StreamingSetUsername",
+    "range": "+"
+  },
+  {
+    "category": "Output",
+    "function": "WriteDurationToRecordingLog",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "MoveMultiViewOverlay",
+    "range": "@number:FromIndex - starting by 1,number:ToIndex - starting by 1"
+  },
+  {
+    "category": "Overlay",
+    "function": "MultiViewOverlay",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "MultiViewOverlayOff",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "MultiViewOverlayOn",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput1",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput1In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput1Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput1Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput1Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput1Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput2",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput2In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput2Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput2Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput2Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput2Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput3",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput3In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput3Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput3Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput3Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput3Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput4",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput4In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput4Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput4Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput4Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput4Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput5",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput5In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput5Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput5Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput5Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput5Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput6",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput6In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput6Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput6Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput6Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput6Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput7",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput7In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput7Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput7Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput7Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput7Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput8",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput8In",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput8Last",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput8Off",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput8Out",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInput8Zoom",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "OverlayInputAllOff",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput1",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput2",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput3",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput4",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput5",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput6",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput7",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "PreviewOverlayInput8",
+    "range": "+"
+  },
+  {
+    "category": "Overlay",
+    "function": "SetMultiViewOverlay",
+    "range": "@number:Overlay number (1 to 10),string:Input to set as layer"
+  },
+  {
+    "category": "Playlist",
+    "function": "NextPlayListEntry",
+    "range": "+"
+  },
+  {
+    "category": "Playlist",
+    "function": "PreviousPlayListEntry",
+    "range": "+"
+  },
+  {
+    "category": "Playlist",
+    "function": "SelectPlayList",
+    "range": "+"
+  },
+  {
+    "category": "Playlist",
+    "function": "StartPlayList",
+    "range": "+"
+  },
+  {
+    "category": "Playlist",
+    "function": "StopPlayList",
+    "range": "+"
+  },
+  {
+    "category": "Preset",
+    "function": "LastPreset",
+    "range": "+"
+  },
+  {
+    "category": "Preset",
+    "function": "OpenPreset",
+    "range": "+"
+  },
+  {
+    "category": "Preset",
+    "function": "SavePreset",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZCreateVirtualInput",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZFocusAuto",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZFocusFar",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZFocusManual",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZFocusNear",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZFocusStop",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZHome",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveDown",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveDownLeft",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveDownRight",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveLeft",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveRight",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveStop",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveToVirtualInputPosition",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveToVirtualInputPositionByIndex",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveUp",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveUpLeft",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZMoveUpRight",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZUpdateVirtualInput",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZZoomIn",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZZoomOut",
+    "range": "+"
+  },
+  {
+    "category": "PTZ",
+    "function": "PTZZoomStop",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayACamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayAppendLastEventText",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayAppendLastEventTextCamera",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayAppendSelectedEventText",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayAppendSelectedEventTextCamera",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayBCamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCCamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayChangeDirection",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayChangeSpeed",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCopyLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayCopySelectedEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDCamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDeleteLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDeleteSelectedEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDuplicateLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayDuplicateSelectedEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayExportLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayFastBackward",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayFastForward",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayJumpFrames",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayJumpFramesFastOff",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayJumpFramesFastOn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayJumpToNow",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayJumpToSelectedInPoint",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayJumpToSelectedOutPoint",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayLastEventCameraOff",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayLastEventCameraOn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayLastEventSingleCameraOn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayLive",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayLiveToggle",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkCancel",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkIn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInLive",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInOut",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInOutLive",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInOutLiveFuture",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInOutRecorded",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInRecorded",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkInRecordedNow",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMarkOut",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMoveLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMoveSelectedEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMoveSelectedEventDown",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMoveSelectedEventUp",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMoveSelectedInPoint",
+    "range": "<?:?"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayMoveSelectedOutPoint",
+    "range": "<?:?"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPause",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlay",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayAllEvents",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayAllEventsToOutput",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayBackward",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayEventsByID",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayEventsByIDToOutput",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayEventToOutput",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayForward",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayLastEventToOutput",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayNext",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayPause",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlayPrevious",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlaySelectedEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayPlaySelectedEventToOutput",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayQuadModeOff",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayQuadModeOn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayRecorded",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayScrollSelectedEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectAllEvents",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectChannelA",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectChannelAB",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectChannelB",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectedEventCameraOff",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectedEventCameraOn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectedEventSingleCameraOn",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents10",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents11",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents12",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents13",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents14",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents15",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents16",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents17",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents18",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents19",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents20",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectEvents9",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectFirstEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectLastEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectNextEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySelectPreviousEvent",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetAudioSource",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetChannelAToBTimecode",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetChannelAToBTimecodeAndCamera",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetChannelBToATimecodeAndCamera",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetDirectionBackward",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetDirectionForward",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetLastEventText",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetLastEventTextCamera",
+    "range": "@number:Camera,string:Text"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetSelectedEventText",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetSelectedEventTextCamera",
+    "range": "@number:Camera,string:Text"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetSpeed",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySetTimecode",
+    "range": "{hh:mm:ss}"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayShowHide",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayStartRecording",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayStopEvents",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayStopRecording",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplaySwapChannels",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleLastEventCamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleQuadMode",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera1",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera2",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera3",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera4",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera5",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera6",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera7",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayToggleSelectedEventCamera8",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayUpdateSelectedInPoint",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayUpdateSelectedOutPoint",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayUpdateSelectedSpeed",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayUpdateSelectedSpeedDefault",
+    "range": "+"
+  },
+  {
+    "category": "Replay",
+    "function": "ReplayUpdateSelectedSpeedFromValue",
+    "range": "+"
+  },
+  {
+    "category": "Scripting",
+    "function": "ScriptStart",
+    "range": "+"
+  },
+  {
+    "category": "Scripting",
+    "function": "ScriptStartDynamic",
+    "range": "+"
+  },
+  {
+    "category": "Scripting",
+    "function": "ScriptStop",
+    "range": "+"
+  },
+  {
+    "category": "Scripting",
+    "function": "ScriptStopAll",
+    "range": "+"
+  },
+  {
+    "category": "Scripting",
+    "function": "ScriptStopDynamic",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "AdjustCountdown",
+    "range": "<?:?"
+  },
+  {
+    "category": "Title",
+    "function": "ChangeCountdown",
+    "range": "{hh:mm:ss}"
+  },
+  {
+    "category": "Title",
+    "function": "NextTitlePreset",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "PauseCountdown",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "PauseRender",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "PreviousTitlePreset",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "ResumeRender",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SelectTitlePreset",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetColor",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetCountdown",
+    "range": "{hh:mm:ss}"
+  },
+  {
+    "category": "Title",
+    "function": "SetImage",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetImageVisible",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetImageVisibleOff",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetImageVisibleOn",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetText",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetTextColour",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetTextVisible",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetTextVisibleOff",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetTextVisibleOn",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SetTickerSpeed",
+    "range": "0:1000"
+  },
+  {
+    "category": "Title",
+    "function": "StartCountdown",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "StopCountdown",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "SuspendCountdown",
+    "range": "+"
+  },
+  {
+    "category": "Title",
+    "function": "TitleBeginAnimation",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "CutDirect",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "FadeToBlack",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "QuickPlay",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetFader",
+    "range": "0:255"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput1",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput2",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput3",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput4",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput5",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput6",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput7",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetStingerGTInput8",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionDuration1",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionDuration2",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionDuration3",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionDuration4",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionEffect1",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionEffect2",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionEffect3",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "SetTransitionEffect4",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger1",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger2",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger3",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger4",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger5",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger6",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger7",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Stinger8",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Transition1",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Transition2",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Transition3",
+    "range": "+"
+  },
+  {
+    "category": "Transition",
+    "function": "Transition4",
+    "range": "+"
+  }
+]

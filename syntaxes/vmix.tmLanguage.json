@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "vMix Script",
+  "patterns": [
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#vmixapi_full"
+    },
+    {
+      "include": "#vmixapi_base"
+    },
+    {
+      "include": "#functions"
+    }
+  ],
+  "repository": {
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.vmix",
+          "match": "\\b(?i)(Dim|If|Then|Else|ElseIf|End|Select|Case|For|To|Step|Next|While|Wend|Do|Loop|Until|Sub|Function|As|True|False|And|Or|Not|Integer|String|Double|Boolean)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.vmix",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.vmix",
+          "match": "\"\""
+        }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.vmix",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    "comments": {
+      "name": "comment.line.apostrophe.vmix",
+      "match": "'.*$"
+    },
+    "vmixapi_full": {
+      "match": "\\b(vMixAPI)\\.(\\w+)\\.(\\w+)\\b",
+      "captures": {
+        "1": {
+          "name": "support.class.vmix"
+        },
+        "2": {
+          "name": "support.class.vmix"
+        },
+        "3": {
+          "name": "entity.name.function.vmix"
+        }
+      }
+    },
+    "vmixapi_base": {
+      "name": "support.class.vmix",
+      "match": "\\bvMixAPI\\b"
+    },
+    "functions": {
+      "match": "\\b([a-zA-Z_]\\w*)\\s*(?=\\()",
+      "captures": {
+        "1": {
+          "name": "entity.name.function.vmix"
+        }
+      }
+    }
+  },
+  "scopeName": "source.vmix"
+}

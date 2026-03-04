@@ -1,0 +1,10 @@
+{
+  "extension.description": "Entorno de scripting fuertemente tipado para escribir scripts VB.NET compatibles con vMix. Esta es una extensión no oficial de la comunidad y no está afiliada ni respaldada por StudioCoast Pty Ltd.",
+  "config.projectPath": "Ruta absoluta al archivo .vmix para extraer Inputs y Objetos.",
+  "cmd.showMenu": "Scripting Assistant: Mostrar Menú Principal",
+  "cmd.openProject": "Scripting Assistant: Abrir proyecto...",
+  "cmd.openSettings": "Scripting Assistant: Configuración",
+  "cmd.installKeymap": "Scripting Assistant: Instalar atajos de Visual Studio 2022",
+  "cmd.exportScript": "Scripting Assistant: Exportar Script (VB.NET)",
+  "cmd.importScript": "Scripting Assistant: Importar Script"
+}

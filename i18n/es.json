@@ -1,0 +1,71 @@
+{
+    "error.loadJson": "No se pudo leer el archivo vMix.json.",
+    "error.noEditor": "Abre un archivo de script para usar esta función.",
+
+    "loading.functions": "Cargando funciones...",
+
+    "editor.defaultScriptName": "Nombre_Del_Script",
+
+    "project.reloaded": "Datos del proyecto recargados correctamente.",
+    "project.loaded": "Proyecto vinculado: \"{0}\" — {1} input(s), {2} objeto(s) detectados.",
+    "project.notFound": "No se encontró el archivo \"{0}\". Verifica la ruta en la configuración.",
+    "project.parseError": "Error al leer \"{0}\". El archivo podría estar dañado.",
+    "project.emptyXml": "No se encontró contenido XML válido en \"{0}\".",
+
+    "statusBar.text": "$(gear) Scripting Assistant",
+    "statusBar.tooltip": "Scripting Assistant – Opciones y Herramientas",
+
+    "menu.selectAction": "Selecciona una acción",
+    "menu.export.label": "$(export) Exportar Script (VB.NET)",
+    "menu.export.detail": "Traduce y prepara el código actual para pegarlo en vMix",
+    "menu.import.label": "$(import) Importar Script del proyecto",
+    "menu.import.detail": "Selecciona un script del proyecto .vmix vinculado y le aplica el tipado",
+    "menu.openProject.label": "$(folder-opened) Abrir proyecto",
+    "menu.openProject.detail": "Selecciona un archivo .vmix para vincularlo",
+    "menu.settings.label": "$(settings-gear) Configuración",
+    "menu.settings.detail": "Abre los ajustes de la extensión",
+    "menu.keymap.label": "$(keyboard) Instalar atajos de VS 2022",
+    "menu.keymap.detail": "Instala el Keymap oficial de Microsoft",
+
+    "dialog.openProject.label": "Vincular a Scripting Assistant",
+    "dialog.openProject.filter": "Proyectos vMix",
+
+    "keymap.installing": "Instalando atajos de teclado de Visual Studio...",
+    "keymap.success": "¡Atajos de Visual Studio instalados con éxito!",
+    "keymap.error": "Hubo un error al intentar instalar los atajos.",
+
+    "export.success": "Script exportado y listo para vMix.",
+    "export.unknownFunctions": "Advertencia: {0} función(es) no encontrada(s) en vMix.json: {1}. Se exportaron con formato genérico.",
+    "export.noScriptName": "No se puede exportar: la primera línea debe ser un comentario con el nombre del script (ej: 'Mi Script).",
+    "export.askUpdateProject": "¿Actualizar el script '{0}' en el proyecto vinculado?",
+    "export.optYes": "Sí, actualizar proyecto",
+    "export.optNo": "No",
+    "export.backupCreated": "Copia de seguridad creada: {0}",
+    "export.projectUpdated": "Script '{0}' reemplazado en el proyecto.",
+    "export.projectAdded": "Script '{0}' añadido al proyecto.",
+    "export.backupError": "No se pudo crear la copia de seguridad. Operación cancelada por seguridad.",
+
+    "import.success": "Script importado y tipado con éxito.",
+    "import.noProject": "No hay proyecto vinculado. Usa 'Abrir proyecto' primero para vincular un archivo .vmix.",
+    "import.noScripts": "No se encontraron scripts en el proyecto vinculado.",
+    "import.selectScript": "Selecciona un script para importar",
+    "import.linesDetail": "línea(s)",
+
+    "diag.typeError": "Error de Tipado: El parámetro '{0}' requiere un elemento de 'InputsList'.",
+    "diag.subNotAllowed": "vMix no permite declarar \"Sub\". El script ya se ejecuta dentro de un Sub implícito.",
+    "diag.functionNotAllowed": "vMix no permite declarar \"Function\". Usa variables y lógica lineal en su lugar.",
+    "diag.typeMismatch": "Incompatibilidad de tipos: '{0}' es {1} pero se compara/asigna con {2}.",
+    "diag.noParamsExpected": "'{0}' no acepta parámetros.",
+    "diag.objectsListRequired": "El parámetro '{0}' requiere un elemento de 'ObjectsList'.",
+    "diag.firstLineRequired": "La primera línea debe ser un comentario con el nombre del script (ej: 'Mi Script). Requerido para exportar.",
+    "diag.dataSourceRequired": "El primer parámetro debe ser un tipo de DataSource (ej: DataSource.GoogleSheets).",
+    "diag.dataSourceInvalidMember": "'{0}' no es un tipo de DataSource válido. Tipos válidos: Excel_CSV, GoogleSheets, RSS, Text, XML, JSON, ZoomChat.",
+
+    "prop.text": "Obtiene o establece el texto de un objeto.",
+    "prop.image": "Obtiene o establece la imagen de un objeto.",
+    "prop.state": "Estado actual de la entrada.",
+    "prop.position": "Posición de reproducción en ms.",
+    "prop.duration": "Duración total en ms.",
+    "prop.inputFind": "Busca un Input por nombre y devuelve una referencia.",
+    "prop.shortcutValue": "Obtiene el valor de un Shortcut."
+}

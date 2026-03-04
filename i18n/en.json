@@ -1,0 +1,71 @@
+{
+    "error.loadJson": "Could not read the vMix.json file.",
+    "error.noEditor": "Open a script file to use this function.",
+
+    "loading.functions": "Loading functions...",
+
+    "editor.defaultScriptName": "Script_Name",
+
+    "project.reloaded": "Project data reloaded successfully.",
+    "project.loaded": "Project linked: \"{0}\" — {1} input(s), {2} object(s) detected.",
+    "project.notFound": "File \"{0}\" not found. Check the path in settings.",
+    "project.parseError": "Error reading \"{0}\". The file might be corrupted.",
+    "project.emptyXml": "No valid XML content found in \"{0}\".",
+
+    "statusBar.text": "$(gear) Scripting Assistant",
+    "statusBar.tooltip": "Scripting Assistant – Options and Tools",
+
+    "menu.selectAction": "Select an action",
+    "menu.export.label": "$(export) Export Script (VB.NET)",
+    "menu.export.detail": "Translates and prepares the current code to paste into vMix",
+    "menu.import.label": "$(import) Import Script from project",
+    "menu.import.detail": "Select a script from the linked .vmix project and apply typing",
+    "menu.openProject.label": "$(folder-opened) Open project",
+    "menu.openProject.detail": "Select a .vmix file to link",
+    "menu.settings.label": "$(settings-gear) Settings",
+    "menu.settings.detail": "Opens extension settings",
+    "menu.keymap.label": "$(keyboard) Install VS 2022 keymap",
+    "menu.keymap.detail": "Installs the official Microsoft Keymap",
+
+    "dialog.openProject.label": "Link to Scripting Assistant",
+    "dialog.openProject.filter": "vMix Projects",
+
+    "keymap.installing": "Installing Visual Studio keymap...",
+    "keymap.success": "Visual Studio keymap installed successfully!",
+    "keymap.error": "There was an error trying to install the keymap.",
+
+    "export.success": "Script exported and ready for vMix.",
+    "export.unknownFunctions": "Warning: {0} function(s) not found in vMix.json: {1}. Exported with generic format.",
+    "export.noScriptName": "Cannot export: the first line must be a comment with the script name (e.g., 'My Script).",
+    "export.askUpdateProject": "Update the script '{0}' in the linked project?",
+    "export.optYes": "Yes, update project",
+    "export.optNo": "No",
+    "export.backupCreated": "Backup created: {0}",
+    "export.projectUpdated": "Script '{0}' replaced in project.",
+    "export.projectAdded": "Script '{0}' added to project.",
+    "export.backupError": "Could not create project backup. Operation cancelled for safety.",
+
+    "import.success": "Script imported and typed successfully.",
+    "import.noProject": "No project linked. Use 'Open project' first to link a .vmix file.",
+    "import.noScripts": "No scripts found in the linked project.",
+    "import.selectScript": "Select a script to import",
+    "import.linesDetail": "line(s)",
+
+    "diag.typeError": "Type Error: The '{0}' parameter requires an element from 'InputsList'.",
+    "diag.subNotAllowed": "vMix does not allow \"Sub\" declarations. The script already runs inside an implicit Sub.",
+    "diag.functionNotAllowed": "vMix does not allow \"Function\" declarations. Use variables and linear logic instead.",
+    "diag.typeMismatch": "Type mismatch: '{0}' is {1} but compared/assigned with {2}.",
+    "diag.noParamsExpected": "'{0}' does not accept parameters.",
+    "diag.objectsListRequired": "The '{0}' parameter requires an element from 'ObjectsList'.",
+    "diag.firstLineRequired": "The first line must be a comment with the script name (e.g., 'My Script). Required for export.",
+    "diag.dataSourceRequired": "The first parameter must be a DataSource type (e.g., DataSource.GoogleSheets).",
+    "diag.dataSourceInvalidMember": "'{0}' is not a valid DataSource type. Valid types: Excel_CSV, GoogleSheets, RSS, Text, XML, JSON, ZoomChat.",
+
+    "prop.text": "Gets or sets the text of an object.",
+    "prop.image": "Gets or sets the image of an object.",
+    "prop.state": "Current state of the input.",
+    "prop.position": "Playback position in ms.",
+    "prop.duration": "Total duration in ms.",
+    "prop.inputFind": "Finds an Input by name and returns a reference.",
+    "prop.shortcutValue": "Gets the value of a Shortcut."
+}
