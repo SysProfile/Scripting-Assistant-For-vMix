@@ -28,6 +28,7 @@ Full autocompletion for all 678 functions in the vMix API, organized by category
 
 #### SetText with two overloads (required-only vs all params)
 ![Function Overloads](./docs/images/intellisense-overloads.png)
+![Function Overloads](./docs/images/intellisense-overloads2.png)
 
 <!-- Screenshot: typing "API.Title." showing SetText with two overloads (required-only vs all params) -->
 
