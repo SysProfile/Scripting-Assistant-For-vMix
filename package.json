@@ -2,7 +2,11 @@
   "name": "vmix-scripting",
   "displayName": "vMix Scripting Language",
   "description": "%extension.description%",
-  "version": "0.0.1",
+  "version": "0.6.51",
+    "repository": {
+    "type": "git",
+    "url": "https://github.com/SysProfile/Scripting-Assistant-For-vMix.git"
+  },
   "engines": {
     "vscode": "^1.80.0"
   },
