@@ -3,6 +3,7 @@
   "displayName": "Scripting Assistant for vMix",
   "description": "%extension.description%",
   "publisher": "sysprofile",
+  "icon": "icon.png",
   "version": "0.6.51",
     "repository": {
     "type": "git",
