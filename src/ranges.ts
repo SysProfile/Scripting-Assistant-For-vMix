@@ -27,6 +27,10 @@ export function getRangeDescription(range: string): string {
     if (range.startsWith('{') && range.endsWith('}')) {
         return `Format: ${range.substring(1, range.length - 1)}`;
     }
+    if (range.startsWith('!') && range.includes(',')) {
+        const vals = range.substring(1).split(',').map(v => v.trim());
+        return `Bus letters (one per parameter): ${vals.join(', ')}`;
+    }
     if (range.startsWith('+') && range.includes(',')) {
         const vals = range.substring(1).split(',');
         return `Accumulative values: ${vals.join(', ')} (can combine, e.g. ${vals.slice(0, 3).join('')})`;
@@ -57,14 +61,34 @@ export function getRangeDescription(range: string): string {
     return range;
 }
 
+// Devuelve los valores individuales del rango ! (e.g. ["M","A","B","C","D","E","F","G"])
+export function getRangeProgressiveValues(range: string): string[] {
+    if (!range.startsWith('!') || !range.includes(',')) { return []; }
+    return range.substring(1).split(',').map(v => v.trim());
+}
+
+// Devuelve un array de arrays, uno por overload.
+// !M,A,B → [["M"], ["M","A"], ["M","A","B"]]
+export function getRangeProgressiveOverloads(range: string): string[][] {
+    const values = getRangeProgressiveValues(range);
+    const result: string[][] = [];
+    for (let i = 0; i < values.length; i++) {
+        result.push(values.slice(0, i + 1));
+    }
+    return result;
+}
+
 export function getRangeCompletionItems(range: string): string[] {
+    if (range.startsWith('!') && range.includes(',')) {
+        return getRangeProgressiveValues(range);
+    }
     if (range.startsWith('+') && range.includes(',')) {
         return range.substring(1).split(',').map(v => v.trim());
     }
     if (range.startsWith('=') && range.includes(',')) {
         return range.substring(1).split(',').map(v => v.trim());
     }
-    if (!range.startsWith('+') && !range.startsWith('=') && !range.startsWith('{') && !range.startsWith('@') && !range.startsWith('<') && !range.startsWith('?') && range !== 'url' && range !== '' && range.includes(',') && !range.includes(':')) {
+    if (!range.startsWith('+') && !range.startsWith('=') && !range.startsWith('!') && !range.startsWith('{') && !range.startsWith('@') && !range.startsWith('<') && !range.startsWith('?') && range !== 'url' && range !== '' && range.includes(',') && !range.includes(':')) {
         return range.split(',').map(v => v.trim());
     }
     return [];
@@ -82,22 +106,23 @@ export function validateValueAgainstRange(value: string, range: string, valueTyp
         return null;
     }
 
-    if (range.startsWith('@')) {
-        return null;
-    }
-
-    if (range.startsWith('{') && range.endsWith('}')) {
-        return null;
-    }
+    if (range.startsWith('@')) { return null; }
+    if (range.startsWith('{') && range.endsWith('}')) { return null; }
 
     if (range === '+') {
-        if (trimmedValue === '""') {
-            return 'Value cannot be empty';
-        }
+        if (trimmedValue === '""') { return 'Value cannot be empty'; }
         return null;
     }
 
-    if (range === '') {
+    if (range === '') { return null; }
+
+    // Para ! el valor es un identificador sin comillas (constante de letra)
+    if (range.startsWith('!') && range.includes(',')) {
+        const validVals = getRangeProgressiveValues(range).map(v => v.toLowerCase());
+        const unquoted = trimmedValue.replace(/^"|"$/g, '').toLowerCase();
+        if (!validVals.includes(unquoted)) {
+            return `Invalid bus letter '${trimmedValue}'. Valid: ${getRangeProgressiveValues(range).join(', ')}`;
+        }
         return null;
     }
 
@@ -118,20 +143,14 @@ export function validateValueAgainstRange(value: string, range: string, valueTyp
                 return `Invalid character '${ch}'. Valid: ${range.substring(1)}`;
             }
         }
-        if (unquoted.length === 0) {
-            return 'Value cannot be empty';
-        }
+        if (unquoted.length === 0) { return 'Value cannot be empty'; }
         return null;
     }
 
     if (range === '<?:?' || range === '?:?') {
         const num = parseFloat(unquoted);
-        if (isNaN(num)) {
-            return 'Value must be a number';
-        }
-        if (range === '?:?' && num < 0) {
-            return 'Value must be >= 0';
-        }
+        if (isNaN(num)) { return 'Value must be a number'; }
+        if (range === '?:?' && num < 0) { return 'Value must be >= 0'; }
         return null;
     }
 
@@ -140,20 +159,14 @@ export function validateValueAgainstRange(value: string, range: string, valueTyp
         const min = parseFloat(parts[0]);
         const max = parseFloat(parts[1]);
         const num = parseFloat(unquoted);
-        if (isNaN(num)) {
-            return 'Value must be a number';
-        }
-        if (num < min || num > max) {
-            return `Value out of range. Expected: ${min} to ${max}`;
-        }
+        if (isNaN(num)) { return 'Value must be a number'; }
+        if (num < min || num > max) { return `Value out of range. Expected: ${min} to ${max}`; }
         return null;
     }
 
-    if (!range.startsWith('+') && !range.startsWith('=') && !range.startsWith('{') && !range.startsWith('@') && !range.startsWith('<') && !range.startsWith('?') && range !== 'url' && range !== '' && range.includes(',') && !range.includes(':')) {
+    if (!range.startsWith('+') && !range.startsWith('=') && !range.startsWith('!') && !range.startsWith('{') && !range.startsWith('@') && !range.startsWith('<') && !range.startsWith('?') && range !== 'url' && range !== '' && range.includes(',') && !range.includes(':')) {
         const validVals = range.split(',').map(v => v.trim());
-        if (!validVals.includes(unquoted)) {
-            return `Invalid value. Valid options: ${range}`;
-        }
+        if (!validVals.includes(unquoted)) { return `Invalid value. Valid options: ${range}`; }
         return null;
     }
 

@@ -1,5 +1,6 @@
 import { vMixFunctions, inputsList, objectsList } from './globals';
 import { findDataSourceByEnum, findDataSourceByNative, isDataSourceFunction } from './datasources';
+import { findRange, getRangeProgressiveValues } from './ranges';
 
 export function findClosingParen(text: string, openIndex: number): number {
     let depth = 0;
@@ -119,8 +120,16 @@ export function exportApiCalls(text: string): { result: string; unknownFunctions
             const args = splitArguments(argsString);
             const namedArgs: string[] = [];
 
-            // DataSource functions: DataSource.X + resto de args → Value:="nativo,arg2,arg3"
-            if (isDataSourceFunction(funcData.function) && args.length > 0) {
+            // Rango progresivo !: args[0]=Input, args[1..N]=letras de bus → Value:="MAB"
+            const rangeData = findRange(category, funcName);
+            if (rangeData && rangeData.range.startsWith('!') && args.length > 0) {
+                namedArgs.push(`Input:=${args[0]}`);
+                if (args.length > 1) {
+                    const busStr = args.slice(1).map(a => a.replace(/^"|"$/g, '')).join('');
+                    namedArgs.push(`Value:="${busStr}"`);
+                }
+            } else if (isDataSourceFunction(funcData.function) && args.length > 0) {
+                // DataSource functions: DataSource.X + resto de args → Value:="nativo,arg2,arg3"
                 const dsMatch = args[0].match(/^DataSource\.(\w+)$/i);
                 if (dsMatch) {
                     const dsEntry = findDataSourceByEnum(dsMatch[1]);
@@ -229,14 +238,26 @@ export function importApiCalls(text: string): string {
                     positionalArgs = splitArguments(argsString);
                 }
             }
-            // DataSource functions: primer arg nativo → DataSource.X
-            if (isDataSourceFunction(funcData.function) && positionalArgs.length > 0) {
+
+            // Rango progresivo !: Value:="MAB" → args separados: InputsList.X, M, A, B
+            const rangeData = findRange(funcData.category, funcData.function);
+            if (rangeData && rangeData.range.startsWith('!')) {
+                const inputArg = positionalArgs.length > 0 ? positionalArgs[0] : '';
+                const valueArg = positionalArgs.length > 1 ? positionalArgs[1] : '';
+                const busStr = valueArg.replace(/^"|"$/g, '');
+                const validLetters = getRangeProgressiveValues(rangeData.range).map(v => v.toUpperCase());
+                // Separar la cadena en letras individuales válidas
+                const busLetters = busStr.toUpperCase().split('').filter(ch => validLetters.includes(ch));
+                positionalArgs = inputArg ? [inputArg, ...busLetters] : busLetters;
+            } else if (isDataSourceFunction(funcData.function) && positionalArgs.length > 0) {
+                // DataSource functions: primer arg nativo → DataSource.X
                 const firstArg = positionalArgs[0].replace(/^"|"$/g, '');
                 const dsEntry = findDataSourceByNative(firstArg);
                 if (dsEntry) {
                     positionalArgs[0] = `DataSource.${dsEntry.enumName}`;
                 }
             }
+
             result += `API.${funcData.category}.${funcData.function}(${positionalArgs.join(', ')})`;
         } else {
             result += text.substring(fullMatchStart, closeParenIndex + 1);

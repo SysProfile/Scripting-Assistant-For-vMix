@@ -22,17 +22,17 @@
   {
     "category": "Audio",
     "function": "AudioBus",
-    "range": "+M,A,B,C,D,E,F,G"
+    "range": "!M,A,B,C,D,E,F,G"
   },
   {
     "category": "Audio",
     "function": "AudioBusOff",
-    "range": "+M,A,B,C,D,E,F,G"
+    "range": "!M,A,B,C,D,E,F,G"
   },
   {
     "category": "Audio",
     "function": "AudioBusOn",
-    "range": "+M,A,B,C,D,E,F,G"
+    "range": "!M,A,B,C,D,E,F,G"
   },
   {
     "category": "Audio",

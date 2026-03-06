@@ -1,6 +1,6 @@
 import * as vscode from 'vscode';
 import { vMixFunctions, inputsList, objectsList } from './globals';
-import { findRange, getRangeDescription, getRangeCompletionItems } from './ranges';
+import { findRange, getRangeDescription, getRangeCompletionItems, getRangeProgressiveValues, getRangeProgressiveOverloads } from './ranges';
 import { dataSourceTypes, isDataSourceFunction } from './datasources';
 import { t } from './i18n';
 
@@ -41,7 +41,6 @@ function buildSmartSnippet(funcName: string, parameters: any, includeOptional: b
     paramKeys.forEach(key => {
         const param = parameters[key];
 
-        // Filtrar opcionales si no se incluyen
         if (param.optional && !includeOptional) { return; }
 
         if (param.composites) {
@@ -79,6 +78,30 @@ function buildSmartSnippet(funcName: string, parameters: any, includeOptional: b
                     break;
             }
         }
+        tabIndex++;
+    });
+
+    return new vscode.SnippetString(`${funcName}(${parts.join(', ')})`);
+}
+
+// Snippet para overloads progresivos: el Input es tab stop y cada letra es su propia constante tab stop
+// letters = ["M"] → AudioBus(${1:InputsList}, ${2:M})
+// letters = ["M","A"] → AudioBus(${1:InputsList}, ${2:M}, ${3:A})
+function buildProgressiveSnippet(funcName: string, parameters: any, letters: string[]): vscode.SnippetString {
+    const parts: string[] = [];
+    let tabIndex = 1;
+
+    // Primer parámetro: siempre Input
+    const paramKeys = Object.keys(parameters || {});
+    const inputKey = paramKeys.find(k => (parameters[k] as any).type === 'input');
+    if (inputKey) {
+        parts.push(`InputsList\${${tabIndex}}`);
+        tabIndex++;
+    }
+
+    // Cada letra es un parámetro separado sin comillas (constante)
+    letters.forEach(letter => {
+        parts.push(`\${${tabIndex}:${letter}}`);
         tabIndex++;
     });
 
@@ -255,6 +278,22 @@ export function getCompletionProvider(): vscode.Disposable {
                         const rangeData = findRange(f.category, f.function);
                         const rangeDesc = rangeData ? ` | ${getRangeDescription(rangeData.range)}` : '';
                         const params = f.parameters;
+
+                        // Overloads progresivos para rangos tipo !
+                        // Genera un overload por cada profundidad: (Input, M), (Input, M, A), ...
+                        if (rangeData && rangeData.range.startsWith('!')) {
+                            const overloads = getRangeProgressiveOverloads(rangeData.range);
+                            overloads.forEach((letters, overloadIndex) => {
+                                const item = new vscode.CompletionItem(f.function, vscode.CompletionItemKind.Method);
+                                item.detail = `${f.function}(Input, ${letters.join(', ')})`;
+                                item.documentation = new vscode.MarkdownString(f.description + rangeDesc);
+                                item.insertText = buildProgressiveSnippet(f.function, params, letters);
+                                item.sortText = `${String(funcIndex).padStart(4, '0')}${String.fromCharCode(97 + overloadIndex)}`;
+                                completionItems.push(item);
+                            });
+                            return;
+                        }
+
                         const hasParams = params && typeof params === 'object' && Object.keys(params).length > 0;
                         const hasOptional = hasParams && Object.values(params).some((p: any) => p.optional);
 
@@ -302,6 +341,24 @@ export function getCompletionProvider(): vscode.Disposable {
                         f.category.toLowerCase() === category.toLowerCase() &&
                         f.function.toLowerCase() === funcName.toLowerCase()
                     );
+
+                    // Para funciones con rango !, ofrecer letras de bus como constantes en posición 1+
+                    if (funcData) {
+                        const rangeData = findRange(category, funcName);
+                        if (rangeData && rangeData.range.startsWith('!') && currentArgIndex >= 1) {
+                            const values = getRangeProgressiveValues(rangeData.range);
+                            // Excluir letras ya usadas en args anteriores
+                            const alreadyUsed = argsTyped.split(',').slice(1).map(a => a.trim().toUpperCase());
+                            return values
+                                .filter(v => !alreadyUsed.includes(v.toUpperCase()))
+                                .map(v => {
+                                    const item = new vscode.CompletionItem(v, vscode.CompletionItemKind.Constant);
+                                    item.detail = `Bus letter`;
+                                    item.insertText = v;
+                                    return item;
+                                });
+                        }
+                    }
 
                     if (funcData && funcData.parameters && typeof funcData.parameters === 'object') {
                         const paramKeys = Object.keys(funcData.parameters);
