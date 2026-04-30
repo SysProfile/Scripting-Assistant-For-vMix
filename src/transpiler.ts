@@ -1,4 +1,5 @@
-import { vMixFunctions, inputsList, objectsList } from './globals';
+import { inputsList, objectsList } from './globals';
+import { getFunction, getFunctionByName } from './funcIndex';
 import { findDataSourceByEnum, findDataSourceByNative, isDataSourceFunction } from './datasources';
 import { findRange, getRangeProgressiveValues } from './ranges';
 
@@ -110,17 +111,13 @@ export function exportApiCalls(text: string): { result: string; unknownFunctions
 
         result += text.substring(lastIndex, match.index);
 
-        const funcData = vMixFunctions.find(f =>
-            f.category.toLowerCase() === category.toLowerCase() &&
-            f.function.toLowerCase() === funcName.toLowerCase()
-        );
+        const funcData = getFunction(category, funcName);
 
         if (funcData && funcData.parameters) {
             const paramKeys = Object.keys(funcData.parameters);
             const args = splitArguments(argsString);
             const namedArgs: string[] = [];
 
-            // Rango progresivo !: args[0]=Input, args[1..N]=letras de bus → Value:="MAB"
             const rangeData = findRange(category, funcName);
             if (rangeData && rangeData.range.startsWith('!') && args.length > 0) {
                 namedArgs.push(`Input:=${args[0]}`);
@@ -129,7 +126,6 @@ export function exportApiCalls(text: string): { result: string; unknownFunctions
                     namedArgs.push(`Value:="${busStr}"`);
                 }
             } else if (isDataSourceFunction(funcData.function) && args.length > 0) {
-                // DataSource functions: DataSource.X + resto de args → Value:="nativo,arg2,arg3"
                 const dsMatch = args[0].match(/^DataSource\.(\w+)$/i);
                 if (dsMatch) {
                     const dsEntry = findDataSourceByEnum(dsMatch[1]);
@@ -191,7 +187,7 @@ export function importApiCalls(text: string): string {
 
         result += text.substring(lastIndex, fullMatchStart);
 
-        const funcData = vMixFunctions.find(f => f.function.toLowerCase() === funcName.toLowerCase());
+        const funcData = getFunctionByName(funcName);
 
         if (funcData) {
             let positionalArgs: string[] = [];
@@ -239,18 +235,15 @@ export function importApiCalls(text: string): string {
                 }
             }
 
-            // Rango progresivo !: Value:="MAB" → args separados: InputsList.X, M, A, B
             const rangeData = findRange(funcData.category, funcData.function);
             if (rangeData && rangeData.range.startsWith('!')) {
                 const inputArg = positionalArgs.length > 0 ? positionalArgs[0] : '';
                 const valueArg = positionalArgs.length > 1 ? positionalArgs[1] : '';
                 const busStr = valueArg.replace(/^"|"$/g, '');
                 const validLetters = getRangeProgressiveValues(rangeData.range).map(v => v.toUpperCase());
-                // Separar la cadena en letras individuales válidas
                 const busLetters = busStr.toUpperCase().split('').filter(ch => validLetters.includes(ch));
                 positionalArgs = inputArg ? [inputArg, ...busLetters] : busLetters;
             } else if (isDataSourceFunction(funcData.function) && positionalArgs.length > 0) {
-                // DataSource functions: primer arg nativo → DataSource.X
                 const firstArg = positionalArgs[0].replace(/^"|"$/g, '');
                 const dsEntry = findDataSourceByNative(firstArg);
                 if (dsEntry) {

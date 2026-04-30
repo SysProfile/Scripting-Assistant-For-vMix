@@ -1,8 +1,10 @@
 import * as vscode from 'vscode';
-import { vMixFunctions } from './globals';
+import { getFunction } from './funcIndex';
 import { findRange, validateValueAgainstRange } from './ranges';
 import { findClosingParen, splitArguments } from './transpiler';
 import { dataSourceTypes, isDataSourceFunction } from './datasources';
+import { isReservedWord, getReservedWordCanonical } from './reservedWords';
+import { checkMissingWaits, checkDirectApiFunction, checkInfiniteLoops } from './linter';
 import { t } from './i18n';
 
 export function updateDiagnostics(document: vscode.TextDocument, diagnosticCollection: vscode.DiagnosticCollection) {
@@ -14,8 +16,7 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
     const text = document.getText();
     const lines = text.split(/\r?\n/);
 
-// ---- Validación de DataSource enum en funciones DataSource ----
-    // El primer parámetro de funciones DataSource debe ser DataSource.X
+    // ---- DataSource enum validation ----
     const dataSourceRegex = /API\.\w+\.(\w+)\s*\(([^)]*)\)/gi;
     let dsMatch;
     while ((dsMatch = dataSourceRegex.exec(text)) !== null) {
@@ -28,7 +29,6 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
 
         if (!firstArg) { continue; }
 
-        // Debe ser DataSource.X
         if (!firstArg.match(/^DataSource\.\w+$/i)) {
             const argOffset = dsMatch.index + dsMatch[0].indexOf('(') + 1;
             const argStartPos = document.positionAt(argOffset);
@@ -39,7 +39,6 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
                 vscode.DiagnosticSeverity.Error
             ));
         } else {
-            // Validar que el miembro exista
             const memberName = firstArg.split('.')[1];
             const validMember = dataSourceTypes.some(d => d.enumName.toLowerCase() === memberName.toLowerCase());
             if (!validMember) {
@@ -56,8 +55,7 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
         }
     }
 
-    // ---- Primera línea obligatoria: comentario con nombre del script ----
-    // Solo marcar error si el documento tiene contenido real (no en archivos vacíos/nuevos)
+    // ---- First line must be a comment with the script name ----
     if (lines.length > 0) {
         const hasContent = lines.some(line => line.trim().length > 0);
         const firstLine = lines[0];
@@ -74,7 +72,9 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
         }
     }
 
-    // ---- Sub y Function no permitidos ----
+    // ---- Sub/Function not allowed + Reserved words as variable names ----
+    const dimReservedRegex = /\bDim\s+([a-zA-Z0-9_]+)/i;
+
     lines.forEach((line, lineIndex) => {
         const trimmed = line.trim().toLowerCase();
 
@@ -95,15 +95,48 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
             );
             diagnostics.push(new vscode.Diagnostic(range, t('diag.functionNotAllowed'), vscode.DiagnosticSeverity.Error));
         }
+
+        // Reserved word as variable
+        const dimMatch = line.match(dimReservedRegex);
+        if (dimMatch && !line.trimStart().startsWith("'")) {
+            const varName = dimMatch[1];
+            if (isReservedWord(varName)) {
+                const startChar = line.indexOf(varName, line.search(/\bDim\b/i));
+                const range = new vscode.Range(
+                    new vscode.Position(lineIndex, startChar),
+                    new vscode.Position(lineIndex, startChar + varName.length)
+                );
+                const canonical = getReservedWordCanonical(varName) || varName;
+                diagnostics.push(new vscode.Diagnostic(
+                    range,
+                    t('diag.reservedWord', canonical),
+                    vscode.DiagnosticSeverity.Error
+                ));
+            }
+        }
     });
 
-    // ---- Incompatibilidad de tipos ----
+    // ---- Type mismatch: explicit (As Type) and inferred (= literal) ----
     const varTypes: { [key: string]: string } = {};
-    const dimRegex = /\bDim\s+([a-zA-Z0-9_]+)\s+As\s+(Integer|String|Double|Boolean)\b/gi;
-    let dimMatch;
 
-    while ((dimMatch = dimRegex.exec(text)) !== null) {
-        varTypes[dimMatch[1].toLowerCase()] = dimMatch[2].toLowerCase();
+    // Explicit: Dim x As Integer
+    const dimExplicit = /\bDim\s+([a-zA-Z0-9_]+)\s+As\s+(Integer|String|Double|Boolean)\b/gi;
+    let dimMatchExp;
+    while ((dimMatchExp = dimExplicit.exec(text)) !== null) {
+        varTypes[dimMatchExp[1].toLowerCase()] = dimMatchExp[2].toLowerCase();
+    }
+
+    // Inferred: Dim x = literal (without As Type)
+    const dimInferred = /\bDim\s+([a-zA-Z0-9_]+)\s*=\s*(.+)$/gim;
+    let dimMatchInf;
+    while ((dimMatchInf = dimInferred.exec(text)) !== null) {
+        const name = dimMatchInf[1].toLowerCase();
+        if (varTypes[name]) { continue; }
+        const initializer = dimMatchInf[2].trim();
+        const inferredType = getLiteralType(initializer);
+        if (inferredType) {
+            varTypes[name] = inferredType;
+        }
     }
 
     function getLiteralType(value: string): string | null {
@@ -181,14 +214,13 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
         }
     });
 
-    // ---- Parámetros de tipo Input sin InputsList ----
+    // ---- Input parameters without InputsList ----
     const apiPattern = /API\.(\w+)\.(\w+)\s*\(/g;
     let apiMatch;
 
     while ((apiMatch = apiPattern.exec(text)) !== null) {
         const category = apiMatch[1];
         const funcName = apiMatch[2];
-        // Saltar si la línea es un comentario
         const matchLine = document.positionAt(apiMatch.index).line;
         const matchLineText = document.lineAt(matchLine).text.trimStart();
         if (matchLineText.startsWith("'")) {
@@ -207,14 +239,10 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
         const argsString = text.substring(openParenIndex + 1, closeParenIndex);
         const argsStartIndex = openParenIndex + 1;
 
-        const funcData = vMixFunctions.find(f =>
-            f.category.toLowerCase() === category.toLowerCase() &&
-            f.function.toLowerCase() === funcName.toLowerCase()
-        );
+        const funcData = getFunction(category, funcName);
 
         if (!funcData) { continue; }
 
-        // ---- Funciones sin parámetros: advertir si el usuario escribió algo ----
         const paramsObj = funcData.parameters;
         const isEmptyParams = !paramsObj || (typeof paramsObj === 'string') || Object.keys(paramsObj).length === 0;
 
@@ -244,7 +272,6 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
                     const paramName = paramKeys[index];
                     const paramDef = paramsObj[paramName];
 
-                    // Validación tipo input → requiere InputsList
                     if (paramDef.type === 'input') {
                         if (!arg.match(/^InputsList\./i)) {
                             const argIndex = argsString.indexOf(arg, currentOffset);
@@ -260,7 +287,6 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
                         }
                     }
 
-                    // Validación SelectedIndex / SelectedName → requiere ObjectsList
                     if (paramName.toLowerCase() === 'selectedindex' || paramName.toLowerCase() === 'selectedname') {
                         if (!arg.match(/^ObjectsList\./i) && arg.trim().length > 0) {
                             const argIndex = argsString.indexOf(arg, currentOffset);
@@ -276,7 +302,6 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
                         }
                     }
 
-                    // Validación de rango para Value, Channel, Duration
                     const lowerParamName = paramName.toLowerCase();
                     if (lowerParamName === 'value' || lowerParamName === 'channel' || lowerParamName === 'duration') {
                         const rangeData = findRange(category, funcName);
@@ -307,6 +332,16 @@ export function updateDiagnostics(document: vscode.TextDocument, diagnosticColle
         }
 
         apiPattern.lastIndex = closeParenIndex + 1;
+    }
+
+    // ---- Linter (good practices) ----
+    const config = vscode.workspace.getConfiguration('vmixScripting');
+    const linterEnabled = config.get<boolean>('enableLinter', true);
+
+    if (linterEnabled) {
+        diagnostics.push(...checkMissingWaits(document));
+        diagnostics.push(...checkDirectApiFunction(document));
+        diagnostics.push(...checkInfiniteLoops(document));
     }
 
     diagnosticCollection.set(document.uri, diagnostics);

@@ -4,8 +4,8 @@
   "description": "%extension.description%",
   "publisher": "sysprofile",
   "icon": "icon.png",
-  "version": "0.6.55",
-    "repository": {
+  "version": "0.7.0",
+  "repository": {
     "type": "git",
     "url": "https://github.com/SysProfile/Scripting-Assistant-For-vMix.git"
   },
@@ -34,6 +34,21 @@
           "type": "string",
           "default": "",
           "description": "%config.projectPath%"
+        },
+        "vmixScripting.apiUrl": {
+          "type": "string",
+          "default": "http://localhost:8088",
+          "description": "%config.apiUrl%"
+        },
+        "vmixScripting.enableLinter": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.enableLinter%"
+        },
+        "vmixScripting.enableHotReload": {
+          "type": "boolean",
+          "default": true,
+          "description": "%config.enableHotReload%"
         }
       }
     },
@@ -61,6 +76,26 @@
       {
         "command": "vmixScripting.importScript",
         "title": "%cmd.importScript%"
+      },
+      {
+        "command": "vmixScripting.runScript",
+        "title": "%cmd.runScript%"
+      },
+      {
+        "command": "vmixScripting.refreshFromVmix",
+        "title": "%cmd.refreshFromVmix%"
+      },
+      {
+        "command": "vmixScripting.verifyRoundTrip",
+        "title": "%cmd.verifyRoundTrip%"
+      },
+      {
+        "command": "vmixScripting.exportStandalone",
+        "title": "%cmd.exportStandalone%"
+      },
+      {
+        "command": "vmixScripting.newFromTemplate",
+        "title": "%cmd.newFromTemplate%"
       }
     ],
     "languages": [
@@ -71,8 +106,7 @@
           "vmix"
         ],
         "extensions": [
-          ".vmixscript",
-          ".vb"
+          ".vmixscript"
         ]
       }
     ],

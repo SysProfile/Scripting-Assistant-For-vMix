@@ -1,5 +1,6 @@
 import * as vscode from 'vscode';
 import { vMixFunctions, inputsList, objectsList } from './globals';
+import { getFunction, getFunctionsByCategory, getAllCategories } from './funcIndex';
 import { findRange, getRangeDescription, getRangeCompletionItems, getRangeProgressiveValues, getRangeProgressiveOverloads } from './ranges';
 import { dataSourceTypes, isDataSourceFunction } from './datasources';
 import { t } from './i18n';
@@ -22,6 +23,33 @@ function extractInputFromFirstArg(argsTyped: string): string | null {
     const firstArg = typedArgs[0].trim();
     const inputMatch = firstArg.match(/^InputsList\.(\w+)$/i);
     return inputMatch ? inputMatch[1] : null;
+}
+
+interface TrackedVar {
+    name: string;
+    varType: string;
+    isInputFind: boolean;
+}
+
+// Una sola pasada para detectar todas las variables Dim
+function trackVariables(text: string): TrackedVar[] {
+    const tracked: TrackedVar[] = [];
+    const seen = new Set<string>();
+    // Captura: Dim x [As Type] [= valor]
+    const regex = /Dim\s+([a-zA-Z0-9_]+)\s*(?:As\s+(\w+))?\s*(?:=\s*(.+?))?$/gim;
+    let m;
+    while ((m = regex.exec(text)) !== null) {
+        const name = m[1];
+        const lower = name.toLowerCase();
+        if (seen.has(lower)) { continue; }
+        seen.add(lower);
+
+        const varType = m[2] || 'Variant';
+        const initializer = (m[3] || '').trim();
+        const isInputFind = /^API\.Input\.Find\b/i.test(initializer);
+        tracked.push({ name, varType, isInputFind });
+    }
+    return tracked;
 }
 
 // ==========================================
@@ -84,14 +112,10 @@ function buildSmartSnippet(funcName: string, parameters: any, includeOptional: b
     return new vscode.SnippetString(`${funcName}(${parts.join(', ')})`);
 }
 
-// Snippet para overloads progresivos: el Input es tab stop y cada letra es su propia constante tab stop
-// letters = ["M"] → AudioBus(${1:InputsList}, ${2:M})
-// letters = ["M","A"] → AudioBus(${1:InputsList}, ${2:M}, ${3:A})
 function buildProgressiveSnippet(funcName: string, parameters: any, letters: string[]): vscode.SnippetString {
     const parts: string[] = [];
     let tabIndex = 1;
 
-    // Primer parámetro: siempre Input
     const paramKeys = Object.keys(parameters || {});
     const inputKey = paramKeys.find(k => (parameters[k] as any).type === 'input');
     if (inputKey) {
@@ -99,7 +123,6 @@ function buildProgressiveSnippet(funcName: string, parameters: any, letters: str
         tabIndex++;
     }
 
-    // Cada letra es un parámetro separado sin comillas (constante)
     letters.forEach(letter => {
         parts.push(`\${${tabIndex}:${letter}}`);
         tabIndex++;
@@ -108,7 +131,6 @@ function buildProgressiveSnippet(funcName: string, parameters: any, letters: str
     return new vscode.SnippetString(`${funcName}(${parts.join(', ')})`);
 }
 
-// Generar label de firma para el detail del CompletionItem
 function buildSignatureLabel(parameters: any, includeOptional: boolean): string {
     const paramKeys = Object.keys(parameters || {});
     const parts: string[] = [];
@@ -136,39 +158,20 @@ export function getCompletionProvider(): vscode.Disposable {
 
                 const linePrefix = document.lineAt(position).text.substring(0, position.character);
 
-                // Saltar líneas comentadas
                 if (linePrefix.trimStart().startsWith("'")) {
                     return undefined;
                 }
 
-                // Rastrear variables de Input.Find
                 const textUntilCursor = document.getText(new vscode.Range(new vscode.Position(0, 0), position));
-                const inputVarRegex = /Dim\s+([a-zA-Z0-9_]+)\s*(?:As\s+\w+\s*)?=\s*API\.Input\.Find/gi;
-                let inputVarMatch;
-                const trackedInputs: string[] = [];
-
-                while ((inputVarMatch = inputVarRegex.exec(textUntilCursor)) !== null) {
-                    trackedInputs.push(inputVarMatch[1]);
-                }
-
-                // Rastrear TODAS las variables Dim
-                const allVarRegex = /Dim\s+([a-zA-Z0-9_]+)\s*(?:As\s+(\w+))?/gi;
-                let allVarMatch;
-                const trackedVars: { name: string; varType: string }[] = [];
-
-                while ((allVarMatch = allVarRegex.exec(textUntilCursor)) !== null) {
-                    trackedVars.push({
-                        name: allVarMatch[1],
-                        varType: allVarMatch[2] || 'Variant'
-                    });
-                }
+                const trackedVars = trackVariables(textUntilCursor);
+                const trackedInputFinds = trackedVars.filter(v => v.isInputFind).map(v => v.name);
 
                 // Propiedades de variables Input.Find (miVar.)
                 const currentVarMatch = linePrefix.match(/([a-zA-Z0-9_]+)\.$/);
                 if (currentVarMatch) {
                     const typedVar = currentVarMatch[1].toLowerCase();
 
-                    if (trackedInputs.some(v => v.toLowerCase() === typedVar)) {
+                    if (trackedInputFinds.some(v => v.toLowerCase() === typedVar)) {
                         const inputProps = [
                             { name: 'Text', desc: t('prop.text') },
                             { name: 'Image', desc: t('prop.image') },
@@ -197,7 +200,6 @@ export function getCompletionProvider(): vscode.Disposable {
                     });
                 }
 
-                // ObjectsList. con filtrado contextual
                 if (linePrefix.match(/ObjectsList\.$/i)) {
                     let filteredObjects = [...objectsList];
 
@@ -236,23 +238,22 @@ export function getCompletionProvider(): vscode.Disposable {
                 }
 
                 if (linePrefix.match(/API\.$/i)) {
-                    const categories = [...new Set(vMixFunctions.map(f => f.category))];
+                    const categories = getAllCategories();
 
                     const specialCategories = ['Input', 'Shortcut'];
                     specialCategories.forEach(sc => {
-                        if (!categories.some(c => (c as string).toLowerCase() === sc.toLowerCase())) {
+                        if (!categories.some(c => c.toLowerCase() === sc.toLowerCase())) {
                             categories.push(sc);
                         }
                     });
 
                     return categories.map(c => {
-                        const item = new vscode.CompletionItem(c as string, vscode.CompletionItemKind.Module);
+                        const item = new vscode.CompletionItem(c, vscode.CompletionItemKind.Module);
                         item.commitCharacters = ['.'];
                         return item;
                     });
                 }
 
-                // Funciones de una categoría con overloads
                 const categoryMatch = linePrefix.match(/API\.(\w+)\.$/i);
                 if (categoryMatch) {
                     const category = categoryMatch[1].toLowerCase();
@@ -271,7 +272,7 @@ export function getCompletionProvider(): vscode.Disposable {
                         return [valueItem];
                     }
 
-                    const functions = vMixFunctions.filter(f => f.category.toLowerCase() === category);
+                    const functions = getFunctionsByCategory(category);
                     const completionItems: vscode.CompletionItem[] = [];
 
                     functions.forEach((f, funcIndex) => {
@@ -279,8 +280,6 @@ export function getCompletionProvider(): vscode.Disposable {
                         const rangeDesc = rangeData ? ` | ${getRangeDescription(rangeData.range)}` : '';
                         const params = f.parameters;
 
-                        // Overloads progresivos para rangos tipo !
-                        // Genera un overload por cada profundidad: (Input, M), (Input, M, A), ...
                         if (rangeData && rangeData.range.startsWith('!')) {
                             const overloads = getRangeProgressiveOverloads(rangeData.range);
                             overloads.forEach((letters, overloadIndex) => {
@@ -297,7 +296,6 @@ export function getCompletionProvider(): vscode.Disposable {
                         const hasParams = params && typeof params === 'object' && Object.keys(params).length > 0;
                         const hasOptional = hasParams && Object.values(params).some((p: any) => p.optional);
 
-                        // Overload 1: solo parámetros requeridos (siempre)
                         const requiredItem = new vscode.CompletionItem(f.function, vscode.CompletionItemKind.Method);
                         const requiredLabel = hasParams ? buildSignatureLabel(params, false) : '()';
                         requiredItem.detail = `${f.function}${requiredLabel}`;
@@ -306,7 +304,6 @@ export function getCompletionProvider(): vscode.Disposable {
                         requiredItem.sortText = `${String(funcIndex).padStart(4, '0')}a`;
                         completionItems.push(requiredItem);
 
-                        // Overload 2: todos los parámetros (solo si hay opcionales)
                         if (hasOptional) {
                             const fullItem = new vscode.CompletionItem(f.function, vscode.CompletionItemKind.Method);
                             const fullLabel = buildSignatureLabel(params, true);
@@ -321,7 +318,6 @@ export function getCompletionProvider(): vscode.Disposable {
                     return completionItems;
                 }
 
-                // Autocompletado contextual dentro de parámetros de funciones API
                 const insideFuncMatch = linePrefix.match(/API\.(\w+)\.(\w+)\s*\(([^)]*?)$/i);
                 if (insideFuncMatch) {
                     const category = insideFuncMatch[1];
@@ -337,17 +333,12 @@ export function getCompletionProvider(): vscode.Disposable {
                         });
                     }
 
-                    const funcData = vMixFunctions.find(f =>
-                        f.category.toLowerCase() === category.toLowerCase() &&
-                        f.function.toLowerCase() === funcName.toLowerCase()
-                    );
+                    const funcData = getFunction(category, funcName);
 
-                    // Para funciones con rango !, ofrecer letras de bus como constantes en posición 1+
                     if (funcData) {
                         const rangeData = findRange(category, funcName);
                         if (rangeData && rangeData.range.startsWith('!') && currentArgIndex >= 1) {
                             const values = getRangeProgressiveValues(rangeData.range);
-                            // Excluir letras ya usadas en args anteriores
                             const alreadyUsed = argsTyped.split(',').slice(1).map(a => a.trim().toUpperCase());
                             return values
                                 .filter(v => !alreadyUsed.includes(v.toUpperCase()))
@@ -424,11 +415,9 @@ export function getCompletionProvider(): vscode.Disposable {
                         }
                     }
 
-                    // Dentro de una función: no mostrar root items
                     return [];
                 }
 
-                // Items raíz
                 if (!linePrefix.match(/\.[a-zA-Z0-9_]*$/)) {
                     const rootItems: vscode.CompletionItem[] = [];
 
@@ -448,17 +437,11 @@ export function getCompletionProvider(): vscode.Disposable {
                     dataSourceItem.commitCharacters = ['.'];
                     rootItems.push(dataSourceItem);
 
-                    const addedVars = new Set<string>();
-
                     trackedVars.forEach(v => {
-                        const lowerName = v.name.toLowerCase();
-                        if (addedVars.has(lowerName)) { return; }
-                        addedVars.add(lowerName);
-
                         const varItem = new vscode.CompletionItem(v.name, vscode.CompletionItemKind.Variable);
                         varItem.detail = `Dim ${v.name} As ${v.varType}`;
 
-                        if (trackedInputs.some(ti => ti.toLowerCase() === lowerName)) {
+                        if (v.isInputFind) {
                             varItem.commitCharacters = ['.'];
                         }
 

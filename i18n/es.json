@@ -11,9 +11,12 @@
     "project.notFound": "No se encontró el archivo \"{0}\". Verifica la ruta en la configuración.",
     "project.parseError": "Error al leer \"{0}\". El archivo podría estar dañado.",
     "project.emptyXml": "No se encontró contenido XML válido en \"{0}\".",
+    "project.changed": "Proyecto modificado externamente, recargando...",
 
     "statusBar.text": "$(gear) Scripting Assistant",
     "statusBar.tooltip": "Scripting Assistant – Opciones y Herramientas",
+    "statusBar.linked": "$(gear) vMix: {0} ({1} inputs)",
+    "statusBar.notLinked": "$(warning) vMix: sin proyecto",
 
     "menu.selectAction": "Selecciona una acción",
     "menu.export.label": "$(export) Exportar Script (VB.NET)",
@@ -26,6 +29,16 @@
     "menu.settings.detail": "Abre los ajustes de la extensión",
     "menu.keymap.label": "$(keyboard) Instalar atajos de VS 2022",
     "menu.keymap.detail": "Instala el Keymap oficial de Microsoft",
+    "menu.runScript.label": "$(play) Ejecutar script en vMix",
+    "menu.runScript.detail": "Envía ScriptStart a vMix en ejecución",
+    "menu.refreshFromVmix.label": "$(refresh) Refrescar Inputs desde vMix",
+    "menu.refreshFromVmix.detail": "Lee el estado actual de vMix en ejecución vía API HTTP",
+    "menu.verifyRoundTrip.label": "$(check) Verificar round-trip del script",
+    "menu.verifyRoundTrip.detail": "Exporta y reimporta para detectar pérdida de datos",
+    "menu.exportStandalone.label": "$(file-code) Exportar como archivo .vb",
+    "menu.exportStandalone.detail": "Guarda el código exportado en archivo separado",
+    "menu.newFromTemplate.label": "$(new-file) Nuevo script desde template",
+    "menu.newFromTemplate.detail": "Crea un nuevo script con un template común",
 
     "dialog.openProject.label": "Vincular a Scripting Assistant",
     "dialog.openProject.filter": "Proyectos vMix",
@@ -44,6 +57,8 @@
     "export.projectUpdated": "Script '{0}' reemplazado en el proyecto.",
     "export.projectAdded": "Script '{0}' añadido al proyecto.",
     "export.backupError": "No se pudo crear la copia de seguridad. Operación cancelada por seguridad.",
+    "export.standaloneSuccess": "Script guardado en: {0}",
+    "export.standaloneAsk": "Guardar archivo .vb",
 
     "import.success": "Script importado y tipado con éxito.",
     "import.noProject": "No hay proyecto vinculado. Usa 'Abrir proyecto' primero para vincular un archivo .vmix.",
@@ -60,6 +75,33 @@
     "diag.firstLineRequired": "La primera línea debe ser un comentario con el nombre del script (ej: 'Mi Script). Requerido para exportar.",
     "diag.dataSourceRequired": "El primer parámetro debe ser un tipo de DataSource (ej: DataSource.GoogleSheets).",
     "diag.dataSourceInvalidMember": "'{0}' no es un tipo de DataSource válido. Tipos válidos: Excel_CSV, GoogleSheets, RSS, Text, XML, JSON, ZoomChat.",
+    "diag.reservedWord": "'{0}' es una palabra reservada de VB.NET y no puede usarse como nombre de variable.",
+    "diag.waitMissing": "Posibles llamadas consecutivas al mismo input '{0}' sin un Wait. Considera agregar API.Function(\"Wait\", Value:=\"...\") entre las llamadas.",
+    "diag.directApiFunction": "Hay versión tipada disponible: API.{0}.{1}(...)",
+    "diag.infiniteLoop": "Loop sin condición de salida visible (sin Until/While y sin Exit Do).",
+
+    "codeAction.toTypedApi": "Convertir a llamada API tipada",
+    "codeAction.addScriptName": "Añadir comentario con nombre del script",
+    "codeAction.fixCasing": "Corregir capitalización",
+
+    "hover.range": "Rango válido",
+    "hover.parameter": "Parámetros",
+    "hover.example": "Ejemplo",
+
+    "vmixApi.notRunning": "vMix no está respondiendo en {0}. Asegúrate de que esté corriendo con la API HTTP habilitada.",
+    "vmixApi.scriptStarted": "Script '{0}' iniciado en vMix.",
+    "vmixApi.scriptError": "Error al iniciar el script '{0}': {1}",
+    "vmixApi.refreshSuccess": "Estado de vMix leído: {0} input(s) activo(s).",
+    "vmixApi.refreshFailed": "No se pudo leer el estado: {0}",
+
+    "roundTrip.success": "Round-trip OK: el script es estable tras export/import.",
+    "roundTrip.diff": "Round-trip detectó diferencias. Mira el documento de comparación.",
+
+    "template.selectPlaceholder": "Selecciona un template",
+    "template.lowerThird": "Lower Third con timeout",
+    "template.cycleInputs": "Ciclo de inputs",
+    "template.toggleAudio": "Alternar bus de audio",
+    "template.tallyReact": "Reaccionar a estado de input",
 
     "prop.text": "Obtiene o establece el texto de un objeto.",
     "prop.image": "Obtiene o establece la imagen de un objeto.",

@@ -1,10 +1,18 @@
 {
   "extension.description": "Strongly-typed scripting environment for writing VB.NET scripts compatible with vMix. This is an unofficial community extension and is not affiliated with or endorsed by StudioCoast Pty Ltd.",
   "config.projectPath": "Absolute path to the .vmix file to extract Inputs and Objects.",
+  "config.apiUrl": "Base URL of the running vMix HTTP API (default: http://localhost:8088).",
+  "config.enableLinter": "Enable lint warnings (missing Wait, direct API.Function, infinite loops).",
+  "config.enableHotReload": "Auto-reload the linked project when the .vmix file changes externally.",
   "cmd.showMenu": "Scripting Assistant: Show Main Menu",
   "cmd.openProject": "Scripting Assistant: Open project...",
   "cmd.openSettings": "Scripting Assistant: Settings",
   "cmd.installKeymap": "Scripting Assistant: Install Visual Studio 2022 Keymap",
   "cmd.exportScript": "Scripting Assistant: Export Script (VB.NET)",
-  "cmd.importScript": "Scripting Assistant: Import Script"
+  "cmd.importScript": "Scripting Assistant: Import Script",
+  "cmd.runScript": "Scripting Assistant: Run script in vMix",
+  "cmd.refreshFromVmix": "Scripting Assistant: Refresh Inputs from vMix",
+  "cmd.verifyRoundTrip": "Scripting Assistant: Verify script round-trip",
+  "cmd.exportStandalone": "Scripting Assistant: Export as standalone .vb file",
+  "cmd.newFromTemplate": "Scripting Assistant: New script from template"
 }

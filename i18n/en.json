@@ -11,9 +11,12 @@
     "project.notFound": "File \"{0}\" not found. Check the path in settings.",
     "project.parseError": "Error reading \"{0}\". The file might be corrupted.",
     "project.emptyXml": "No valid XML content found in \"{0}\".",
+    "project.changed": "Project file changed externally, reloading...",
 
     "statusBar.text": "$(gear) Scripting Assistant",
     "statusBar.tooltip": "Scripting Assistant – Options and Tools",
+    "statusBar.linked": "$(gear) vMix: {0} ({1} inputs)",
+    "statusBar.notLinked": "$(warning) vMix: no project",
 
     "menu.selectAction": "Select an action",
     "menu.export.label": "$(export) Export Script (VB.NET)",
@@ -26,6 +29,16 @@
     "menu.settings.detail": "Opens extension settings",
     "menu.keymap.label": "$(keyboard) Install VS 2022 keymap",
     "menu.keymap.detail": "Installs the official Microsoft Keymap",
+    "menu.runScript.label": "$(play) Run script in vMix",
+    "menu.runScript.detail": "Sends ScriptStart to running vMix",
+    "menu.refreshFromVmix.label": "$(refresh) Refresh Inputs from vMix",
+    "menu.refreshFromVmix.detail": "Reads current state from running vMix via HTTP API",
+    "menu.verifyRoundTrip.label": "$(check) Verify script round-trip",
+    "menu.verifyRoundTrip.detail": "Exports and reimports to detect data loss",
+    "menu.exportStandalone.label": "$(file-code) Export as .vb file",
+    "menu.exportStandalone.detail": "Saves exported code to a separate file",
+    "menu.newFromTemplate.label": "$(new-file) New script from template",
+    "menu.newFromTemplate.detail": "Create a new script using a common template",
 
     "dialog.openProject.label": "Link to Scripting Assistant",
     "dialog.openProject.filter": "vMix Projects",
@@ -44,6 +57,8 @@
     "export.projectUpdated": "Script '{0}' replaced in project.",
     "export.projectAdded": "Script '{0}' added to project.",
     "export.backupError": "Could not create project backup. Operation cancelled for safety.",
+    "export.standaloneSuccess": "Script saved to: {0}",
+    "export.standaloneAsk": "Save as .vb file",
 
     "import.success": "Script imported and typed successfully.",
     "import.noProject": "No project linked. Use 'Open project' first to link a .vmix file.",
@@ -60,6 +75,33 @@
     "diag.firstLineRequired": "The first line must be a comment with the script name (e.g., 'My Script). Required for export.",
     "diag.dataSourceRequired": "The first parameter must be a DataSource type (e.g., DataSource.GoogleSheets).",
     "diag.dataSourceInvalidMember": "'{0}' is not a valid DataSource type. Valid types: Excel_CSV, GoogleSheets, RSS, Text, XML, JSON, ZoomChat.",
+    "diag.reservedWord": "'{0}' is a VB.NET reserved word and cannot be used as a variable name.",
+    "diag.waitMissing": "Possible consecutive calls on the same input '{0}' without a Wait. Consider adding API.Function(\"Wait\", Value:=\"...\") between calls.",
+    "diag.directApiFunction": "A typed version is available: API.{0}.{1}(...)",
+    "diag.infiniteLoop": "Loop has no visible exit condition (no Until/While and no Exit Do).",
+
+    "codeAction.toTypedApi": "Convert to typed API call",
+    "codeAction.addScriptName": "Add script name comment",
+    "codeAction.fixCasing": "Fix casing",
+
+    "hover.range": "Valid range",
+    "hover.parameter": "Parameters",
+    "hover.example": "Example",
+
+    "vmixApi.notRunning": "vMix is not responding at {0}. Make sure it's running with HTTP API enabled.",
+    "vmixApi.scriptStarted": "Script '{0}' started in vMix.",
+    "vmixApi.scriptError": "Error starting script '{0}': {1}",
+    "vmixApi.refreshSuccess": "vMix state read: {0} active input(s).",
+    "vmixApi.refreshFailed": "Could not read state: {0}",
+
+    "roundTrip.success": "Round-trip OK: the script is stable across export/import.",
+    "roundTrip.diff": "Round-trip detected differences. See the comparison document.",
+
+    "template.selectPlaceholder": "Select a template",
+    "template.lowerThird": "Lower Third with timeout",
+    "template.cycleInputs": "Cycle through inputs",
+    "template.toggleAudio": "Toggle audio bus",
+    "template.tallyReact": "React to input tally state",
 
     "prop.text": "Gets or sets the text of an object.",
     "prop.image": "Gets or sets the image of an object.",

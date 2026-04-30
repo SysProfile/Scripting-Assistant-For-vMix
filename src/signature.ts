@@ -1,5 +1,5 @@
 import * as vscode from 'vscode';
-import { vMixFunctions } from './globals';
+import { getFunction } from './funcIndex';
 import { findRange, getRangeDescription } from './ranges';
 
 export function getSignatureProvider(): vscode.Disposable {
@@ -14,10 +14,7 @@ export function getSignatureProvider(): vscode.Disposable {
                 const category = sigMatch[1];
                 const funcName = sigMatch[2];
 
-                const funcData = vMixFunctions.find(f =>
-                    f.category.toLowerCase() === category.toLowerCase() &&
-                    f.function.toLowerCase() === funcName.toLowerCase()
-                );
+                const funcData = getFunction(category, funcName);
 
                 if (!funcData || !funcData.parameters) { return undefined; }
 
